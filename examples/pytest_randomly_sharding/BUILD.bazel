@@ -1,0 +1,13 @@
+load("@aspect_rules_py//py:defs.bzl", "py_pytest_test")
+
+py_pytest_test(
+    name = "sharded_test",
+    srcs = [
+        "sharding_test.py",
+    ],
+    shard_count = 8,
+    deps = [
+        "@pypi//pytest",
+        "@pypi//pytest_randomly",
+    ],
+)
