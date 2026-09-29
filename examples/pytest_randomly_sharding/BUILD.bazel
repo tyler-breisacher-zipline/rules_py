@@ -1,10 +1,8 @@
 load("@aspect_rules_py//py:defs.bzl", "py_pytest_test")
 
-# Each Bazel shard collects the same cases in a different random order.
 py_pytest_test(
     name = "sharded_test",
     srcs = [
-        "conftest.py",
         "sharding_test.py",
     ],
     shard_count = 8,
